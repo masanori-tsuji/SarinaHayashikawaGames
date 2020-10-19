@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\シーン">
+      <UniqueIdentifier>{add548fd-ca71-4b96-a4df-8053af408c47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\シーン">
+      <UniqueIdentifier>{7c66c135-12f8-46ec-8999-eaa55be00c61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\インプット">
+      <UniqueIdentifier>{5913c14f-3141-4377-8177-8394834b3f80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\インプット">
+      <UniqueIdentifier>{1462db83-55f3-4259-92f2-a8a877a76ab4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\オブジェクト">
+      <UniqueIdentifier>{c33a5970-aa45-472d-8f48-6e4a436d007a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\UI">
+      <UniqueIdentifier>{d77c6021-4e35-4fa6-acc4-19fce3de0ab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\オブジェクト">
+      <UniqueIdentifier>{74e66f70-9f7a-416e-983b-0adde06860fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\UI">
+      <UniqueIdentifier>{f49e0c51-68f0-4acb-9624-e96c4e3441b3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="fade.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="result.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="title.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="inputkeyboard.cpp">
+      <Filter>ソース ファイル\インプット</Filter>
+    </ClCompile>
+    <ClCompile Include="joystick.cpp">
+      <Filter>ソース ファイル\インプット</Filter>
+    </ClCompile>
+    <ClCompile Include="inputmouse.cpp">
+      <Filter>ソース ファイル\インプット</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>ソース ファイル\インプット</Filter>
+    </ClCompile>
+    <ClCompile Include="life.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="bomb.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ui.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="star.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="score.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="number.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="bg.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="effect.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="explosion.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="manager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="sound.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="scene2D.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="msgwindow.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="graze.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ranking.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="tcp_client.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="name.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="zako.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="pause.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="boss.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="bossgauge.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="talk.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="continue.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="powergauge.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="battlebg.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="trueend.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="badend.cpp">
+      <Filter>ソース ファイル\シーン</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="fade.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="title.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="result.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>ヘッダー ファイル\インプット</Filter>
+    </ClInclude>
+    <ClInclude Include="inputkeyboard.h">
+      <Filter>ヘッダー ファイル\インプット</Filter>
+    </ClInclude>
+    <ClInclude Include="inputmouse.h">
+      <Filter>ヘッダー ファイル\インプット</Filter>
+    </ClInclude>
+    <ClInclude Include="joystick.h">
+      <Filter>ヘッダー ファイル\インプット</Filter>
+    </ClInclude>
+    <ClInclude Include="life.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="star.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="number.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="score.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="bomb.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="bg.h">
+      <Filter>ヘッダー ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>ヘッダー ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="effect.h">
+      <Filter>ヘッダー ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>ヘッダー ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="explosion.h">
+      <Filter>ヘッダー ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>ヘッダー ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>ヘッダー ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="sound.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="scene2D.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="manager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="text.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="msgwindow.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="graze.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ranking.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="tcp_client.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="name.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="zako.h">
+      <Filter>ヘッダー ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="pause.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="boss.h">
+      <Filter>ヘッダー ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="bossgauge.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ui.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="talk.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="continue.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="powergauge.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="battlebg.h">
+      <Filter>ヘッダー ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="badend.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="trueend.h">
+      <Filter>ヘッダー ファイル\シーン</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

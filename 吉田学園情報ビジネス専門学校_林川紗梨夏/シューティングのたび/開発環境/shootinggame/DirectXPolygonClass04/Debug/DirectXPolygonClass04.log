@@ -1,0 +1,5 @@
+﻿  name.cpp
+c:\users\81902\documents\visual studio 2015\projects\directxpolygonclass04\directxpolygonclass04\renderer.h(22): warning C4005: '_DEBUG': マクロが再定義されました。
+  c:\users\81902\documents\visual studio 2015\projects\directxpolygonclass04\directxpolygonclass04\renderer.h(22): note: コマンド ラインの引数: '_DEBUG' の前の定義を確認してください
+  DirectXPolygonClass04.vcxproj -> C:\Users\81902\Documents\Visual Studio 2015\Projects\DirectXPolygonClass04\Debug\DirectXPolygonClass04.exe
+  DirectXPolygonClass04.vcxproj -> C:\Users\81902\Documents\Visual Studio 2015\Projects\DirectXPolygonClass04\Debug\DirectXPolygonClass04.pdb (Full PDB)
