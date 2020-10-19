@@ -59,12 +59,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	RegisterClassEx(&wcex);
 
 	// 指定したクライアント領域を確保するために必要なウィンドウ座標を計算
-	AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+	AdjustWindowRect(&rect, WS_POPUP, false);
 
 	// ウィンドウの作成
 	hWnd = CreateWindow(CLASS_NAME,
 		WINDOW_NAME,
-		WS_OVERLAPPEDWINDOW,
+		WS_POPUP,
 		CW_USEDEFAULT,
 		CW_USEDEFAULT,
 		(rect.right - rect.left),
@@ -91,7 +91,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		dwFPSLastTime = timeGetTime();
 
 	// ウインドウの表示
-	ShowWindow(hWnd, nCmdShow);
+	ShowWindow(hWnd, SW_SHOWMAXIMIZED);
 	UpdateWindow(hWnd);
 
 	// メッセージループ

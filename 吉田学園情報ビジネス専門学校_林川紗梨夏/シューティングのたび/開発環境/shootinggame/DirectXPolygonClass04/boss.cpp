@@ -243,9 +243,11 @@ void CBoss::SubLife(int SubLife)
 		case TYPE_MAIN_BOSS://ラスボス
 			if (m_nLifeCount >= 5)
 			{
+				//スコア加算
 				pScore->AddScore(100000);
 				pSound->CSound::PlaySound(CSound::SOUND_LABEL_SE_BOSSDEATH);
 			
+				//アイテムドロップ
 				CItem::Create(m_Pos, ITEM_SIZE, ITEM_SIZE, CItem::TYPE_SCORE);
 				CExplosion::Create(m_Pos, EXPLOSION_SIZE * 5.0f, EXPLOSION_SIZE * 5.0f, CExplosion::TYPE_NORMAL);
 				for (int nCount = 0; nCount < 10; nCount++)
@@ -256,7 +258,7 @@ void CBoss::SubLife(int SubLife)
 					float RandPosY = float(rand() % 300 + (-300));
 					CExplosion::Create(D3DXVECTOR3(m_Pos.x + RandPosX, m_Pos.y + RandPosY, 0.0f), EXPLOSION_SIZE * 5.0f, EXPLOSION_SIZE * 5.0f, CExplosion::TYPE_NORMAL);
 				}
-				
+				//ボス死亡にする
 				CGame::m_bBossDeath = true;
 				Uninit();
 				return;
@@ -289,7 +291,9 @@ void CBoss::ClearAllBullet(void)
 		}
 	}
 }
-
+//=============================================================================
+// フェーズ１
+//=============================================================================
 void CBoss::PhaseOne(void)
 {
 	CMsgWindow  * pMsg01 = CGame::GetMsgUi01();
@@ -456,7 +460,9 @@ void CBoss::PhaseOne(void)
 	}
 	
 }
-
+//=============================================================================
+// フェーズ２
+//=============================================================================
 void CBoss::PhaseTwo(void)
 {
 	CMsgWindow  * pMsg01 = CGame::GetMsgUi01();
@@ -662,7 +668,9 @@ void CBoss::PhaseTwo(void)
 
 
 }
-
+//=============================================================================
+// フェーズ３
+//=============================================================================
 void CBoss::PhaseThree(void)
 {
 	CMsgWindow  * pMsg01 = CGame::GetMsgUi01();
@@ -894,7 +902,9 @@ void CBoss::PhaseThree(void)
 	
 
 }
-
+//=============================================================================
+// フェーズ４
+//=============================================================================
 void CBoss::PhaseFour(void)
 {
 	CMsgWindow  * pMsg01 = CGame::GetMsgUi01();
@@ -1346,6 +1356,7 @@ void CBoss::Update(void)
 	
 
 	}
+	//ヒット中か
 	if (m_bHit == true)
 	{
 		m_nHitCount++;
@@ -1361,6 +1372,7 @@ void CBoss::Update(void)
 void CBoss::Draw(void)
 {
 	CScene2D::Draw();
+	//ヒット中白く加算する
 	if(m_bHit == true)
 	{
 		CRenderer * pRenderer = CManager::GetRenderer();

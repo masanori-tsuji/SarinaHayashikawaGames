@@ -14,7 +14,7 @@
 #define TEXTURE_ENEMY_ZAKO "data/TEXTURE/enemy002.png"
 #define ZAKO_SIZE_001_WIDTH 200 / 3
 #define ZAKO_SIZE_001_HEIGHT 200 / 3
-#define ENEMY_SIZE_001_COLLISION 100
+#define ZAKO_SIZE_001_COLLISION 30
 
 #define MAX_LOCATION 4//移動ポイント最大
 //プレイヤークラス

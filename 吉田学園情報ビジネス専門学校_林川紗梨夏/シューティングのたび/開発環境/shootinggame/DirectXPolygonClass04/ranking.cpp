@@ -167,7 +167,7 @@ void CRanking::Update(void)
 		lpDIDevice->GetDeviceState(sizeof(DIJOYSTATE), &js);
 	}
 
-	if (lpDIDevice != NULL && pInputJoystick->GetJoystickTrigger(JS_A) || CInputKeyboard::GetKeyboardTrigger(DIK_RETURN))//ƒ{ƒ€
+	if (lpDIDevice != NULL && pInputJoystick->GetJoystickTrigger(JS_A) || CInputKeyboard::GetKeyboardTrigger(DIK_SPACE))//ƒ{ƒ€
 	{
 		CManager::StartFade(CManager::MODE_TITLE, D3DCOLOR_RGBA(0, 0, 0, 0), 0.05f);
 		/*CManager::SetMode(CManager::MODE_TITLE);*/

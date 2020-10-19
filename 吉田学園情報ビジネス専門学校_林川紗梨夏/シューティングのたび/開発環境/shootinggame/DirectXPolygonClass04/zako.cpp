@@ -29,9 +29,9 @@
 // 静的メンバ変数初期化
 //*****************************************************************************
 LPDIRECT3DTEXTURE9 CZako::m_pTexture[TYPE_MAX] = {};   //テクスチャのポインタ
-														//=============================================================================
-														// コンストラクタ
-														//=============================================================================
+//=============================================================================
+// コンストラクタ
+//=============================================================================
 CZako::CZako(int nPriority) : CScene2D(nPriority)
 {
 	for (int nCntVertex = 0; nCntVertex < NUM_VERTEX; nCntVertex++)
@@ -105,7 +105,9 @@ void CZako::Unload(void)
 		}
 	}
 }
-
+//=============================================================================
+// ライフ減算
+//=============================================================================
 void CZako::SubLife(int SubLife)
 {
 	//スコア
@@ -233,10 +235,6 @@ HRESULT CZako::Init(D3DXVECTOR3 pos, D3DXVECTOR3 move, float fSizeWidth, float f
 //=============================================================================
 void CZako::Uninit(void)
 {
-
-	////位置を取得
-	//D3DXVECTOR3 pos = CScene2D::GetPosition();
-	/*CExplosion::Create(pos, TEXTURE_WIDTH, TEXTURE_HEIGHT);*/
 	CScene2D::Uninit();
 }
 
@@ -264,13 +262,6 @@ void CZako::Update(void)
 
 	//エフェクト生成
 	CEffect::Create(m_Pos, ZAKO_SIZE_001_HEIGHT, ZAKO_SIZE_001_HEIGHT, m_Move, CEffect::TYPE_003, CEffect::COLOR_RED,10);
-
-	/*if (m_nConutTime == 200)
-	{
-		m_Move.y = m_Move.y*-1.0f;
-	}*/
-	////位置更新
-	//m_Pos += m_Move;
 
 	//タイム加算
 	m_fMovetime += 0.005f;
@@ -429,41 +420,9 @@ void CZako::Update(void)
 		break;
 	}
 
-	//switch (m_nType)
-	//{
-	//case TYPE_001:
-	//	//テクスチャアニメーション更新
-	//	if (m_nCountAnim >= 8)
-	//	{
-	//		m_nCountAnim = 0;
-	//		m_nPatternAnim++;
-	//		if (m_nPatternAnim > 5)
-	//		{
-	//			m_nPatternAnim = 1;
-	//		}
-	//	}
-	//	m_nCountAnim++;
-	//	//テクスチャ座標のセット
-	//	SetTex(
-	//		m_nPatternAnim * 0.2f,
-	//		0.0f,
-	//		m_nPatternAnim * 0.2f + 0.2f,
-	//		1.0f);
-	//	break;
-	//case TYPE_002:
-	//	//テクスチャ座標のセット
-	//	SetTex(
-	//		0.0f,
-	//		0.0f,
-	//		1.0f,
-	//		1.0f);
-	//	break;
-	//default:
-	//	break;
-	//}
-
 	CScene2D::SetPosition(m_Pos);
 
+	//画面外の処理
 	if (m_Pos.y < 0.0f ||
 		m_Pos.y > FIELD_HEIGHT ||
 		m_Pos.x < 0.0f ||

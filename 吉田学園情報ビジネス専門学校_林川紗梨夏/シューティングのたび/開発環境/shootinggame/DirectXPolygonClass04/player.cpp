@@ -137,7 +137,9 @@ void CPlayer::Unload(void)
 	}
 }
 
-
+//=============================================================================
+// リスポーン
+//=============================================================================
 void CPlayer::Respawn(void)
 {
 	//色のセット
@@ -602,6 +604,8 @@ void CPlayer::Update(void)
 				pSound->CSound::PlaySound(CSound::SOUND_LABEL_SE_BOMB);
 				ExplosionBomb(m_pos);
 			}
+
+			//細かい発射角の指定
 			if (lpDIDevice != NULL &&js.lRy > -800 && js.lRy > 0 && js.lRx > -800 && js.lRx < 0 )
 			{
 				m_fTurretRot = D3DXToRadian(js.lRx / 18 - 180);
@@ -736,7 +740,6 @@ void CPlayer::Update(void)
 				//弾の生成
 				CBullet::Create(m_pos, BULLET_DIAMOND_SIZE, BULLET_DIAMOND_SIZE, D3DXVECTOR3(cosf(D3DXToRadian((m_nExplosionBombCount * 20) * (360 / 360)))*20.5f, sinf(D3DXToRadian((m_nExplosionBombCount * 20) * (360 / 360)))*20.5f, 0.0f), CBullet::TYPE_PLAYER, CBullet::BULLET_DIAMOND, CBullet::COLOR_PINK, CBullet::ATTACK_NORMAL);
 
-			/*}*/
 			if (m_nExplosionBombCount >= 100)
 			{
 				m_bExplosionBombCount = false;
@@ -825,7 +828,7 @@ void CPlayer::Update(void)
 			m_CountTime++;
 		}
 
-		
+		//画面外処理
 		if (m_pos.x < 0)
 		{
 			m_pos.x = 0.0f;
@@ -986,14 +989,20 @@ void CPlayer::Draw(void)
 {
 	CScene2D::Draw();
 }
+
+//=============================================================================
 //ライフ数追加
+//=============================================================================
 void CPlayer::AddLife(int nLife)
 {
 	CLife * pLife = CGame::GetLife();
 	m_nLife += nLife;
 	pLife->SetLife(m_nLife);
 }
+
+//=============================================================================
 //ライフ数減算
+//=============================================================================
 void CPlayer::SubLife(int nLife)
 {
 	CLife * pLife = CGame::GetLife();
@@ -1031,7 +1040,10 @@ void CPlayer::SubLife(int nLife)
 		SubPower(m_nPower / 2);
 	}
 }
+
+//=============================================================================
 //ボム数追加
+//=============================================================================
 void CPlayer::AddBomb(int nBomb)
 {
 	//ボム
@@ -1042,7 +1054,10 @@ void CPlayer::AddBomb(int nBomb)
 		pBomb->SetBomb(m_nBomb);
 	}
 }
+
+//=============================================================================
 //ボム数減算
+//=============================================================================
 void CPlayer::SubBomb(int nBomb)
 {
 	//ボム
@@ -1053,6 +1068,9 @@ void CPlayer::SubBomb(int nBomb)
 		pBomb->SetBomb(m_nBomb);
 	}
 }
+//=============================================================================
+//パワー追加
+//=============================================================================
 void CPlayer::AddPower(int nPow)
 {
 	if (m_nPower <= PLAYER_MAXPOWER)
@@ -1061,6 +1079,10 @@ void CPlayer::AddPower(int nPow)
 	}
 	
 }
+
+//=============================================================================
+//パワー減算
+//=============================================================================
 void CPlayer::SubPower(int nPow)
 {
 	if (m_nPower > 0)
@@ -1068,7 +1090,10 @@ void CPlayer::SubPower(int nPow)
 		m_nPower -= nPow;
 	}
 }
+
+//=============================================================================
 //ボムを爆破
+//=============================================================================
 void CPlayer::ExplosionBomb(D3DXVECTOR3 pos)
 {
 	if (m_nBomb > 0)

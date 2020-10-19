@@ -211,7 +211,7 @@ void CExplosion::Update(void)
 		}
 
 		break;
-	case TYPE_RESPAWN:
+	case TYPE_RESPAWN://リスポーン時のエフェクト
 		if (m_nCountAnim >= 5)//フレームを逆に再生する
 		{
 			m_nCountAnim = 0;
@@ -223,12 +223,13 @@ void CExplosion::Update(void)
 			return;
 		}
 		break;
-	case TYPE_BOMB:
+	case TYPE_BOMB://ボムの爆発エフェクト
 	
 			m_nPatternAnim = 6;
-			m_fScale += 0.1f;
-			m_fSizeWidth += 20.0f;
-			m_fSizeHeight += 20.0f;
+			m_fScale += 0.1f;//エフェクトのサイズを加算
+
+			m_fSizeWidth += 20.0f;//爆発当たり判定を加算
+			m_fSizeHeight += 20.0f;//爆発当たり判定を加算
 			
 				for (int nCnt = 0; nCnt < GetNumAll(); nCnt++)
 				{
@@ -240,16 +241,6 @@ void CExplosion::Update(void)
 						if (objType == OBJTYPE_BULLET_ENEMY)
 						{
 							D3DXVECTOR3 BulletPos = pScene->GetPosition();
-							//if (pos.x - (m_fSizeWidth / 2) <= BulletPos.x - (30.0f / 2) &&
-							//	pos.x + (m_fSizeWidth / 2) > BulletPos.x + (30.0f / 2) &&
-							//	pos.y - (m_fSizeHeight / 2) <= BulletPos.y - (30.0f / 2) &&
-							//	pos.y + (m_fSizeHeight / 2) > BulletPos.y + (30.0f / 2))
-							//{
-							//	pScene->Uninit();
-							//	CExplosion::Create(BulletPos, EXPLOSION_SIZE, EXPLOSION_SIZE, CExplosion::TYPE_NORMAL);
-							//	CItem::Create(BulletPos, 20, 20, CItem::TYPE_SCORE);
-							//	/*break;*/
-							//}
 
 							float posX = pos.x - BulletPos.x;
 							float posY = pos.y - BulletPos.y;
@@ -262,10 +253,52 @@ void CExplosion::Update(void)
 									CItem::Create(BulletPos, 20, 20, CItem::TYPE_SCORE);
 							}
 						}
+						if (objType == OBJTYPE_ENEMY)//敵のダメージを減算
+						{
+							D3DXVECTOR3 enemyPos = pScene->GetPosition();
+
+							float posX = pos.x - enemyPos.x;
+							float posY = pos.y - enemyPos.y;
+							float Rd = float(sqrt(posX * posX + posY * posY)); //ポリゴン１の位置からポリゴン２までの距離
+																			  
+							//pScene(CScene)をCEnemyにダウンキャスト
+							CEnemy * pEnemy = dynamic_cast<CEnemy*> (pScene);
+							//pScene(CScene)をCZakoにダウンキャスト
+							CZako * pZako = dynamic_cast<CZako*> (pScene);
+							//pScene(CScene)をCBossにダウンキャスト
+							CBoss * pBoss = dynamic_cast<CBoss*> (pScene);
+							if (pEnemy != NULL)
+							{
+								if (Rd <= m_fSizeWidth / 2 + (ENEMY_SIZE_001_COLLISION / 2))//ポリゴン１とポリゴン２の半径の合計より位置が小さいと衝突
+								{
+									pEnemy->SubLife(10);
+						
+								}
+
+							}
+							else if (pZako != NULL)
+							{
+								if (Rd <= m_fSizeWidth / 2 + (ZAKO_SIZE_001_COLLISION / 2))//ポリゴン１とポリゴン２の半径の合計より位置が小さいと衝突
+								{
+									pZako->SubLife(10);
+									
+								}
+
+							}
+							else if (pBoss != NULL)
+							{
+								if (Rd <= m_fSizeWidth / 2 + (BOSS_SIZE_001_COLLISION / 2))//ポリゴン１とポリゴン２の半径の合計より位置が小さいと衝突
+								{
+									pBoss->SubLife(10);
+									
+								}
+
+							}
+						}
 					}
 				}
 			
-			if (m_nCountAnim >= 100)
+			if (m_nCountAnim >= 100)//一定時間で消去
 			{
 				Uninit();
 				return;
@@ -315,6 +348,7 @@ void CExplosion::Draw(void)
 {
 	CRenderer * pRenderer = CManager::GetRenderer();
 	LPDIRECT3DDEVICE9 pDevice = pRenderer->GetDevice();
+	//加算合成の処理
 	pDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_ONE);
 	CScene2D::Draw();
 	pDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
