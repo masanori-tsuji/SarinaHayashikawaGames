@@ -1,0 +1,25 @@
+# コメント
+ # 1
+	HRESULT CName::Load(void)
+		D3DXCreateTextureFromFile(pDevice,				// デバイスへのポインタ
+			TEXTURE_NAME,								// ファイルの名前
+			&m_apTexture[0]);								// 読み込むメモリー
+	ドキュメントやgoogle検索して出てくる関数の引数にはコメントつけない。
+
+ # 2
+	CName * CName::Create(
+		pName = new CName;
+		pName->Init(pos, SizeHeight, SizeWidth);
+	pNameがnew出来なかった場合が考慮されてないのでnullチェックは必要。
+
+ # 3
+							//文字の2次元配列に文字を格納
+	m_aLetter[0][0].aLetter = 'Q';
+	冗長すぎてぱっと見、何を実現するためか分からない。
+
+ # 4
+	void CBoss::Update(void)
+	{
+		if (CManager::GetIsTalking() == false)
+		{
+	見やすくするためか不自然な改行目立つので何らかのルールで統一する。
